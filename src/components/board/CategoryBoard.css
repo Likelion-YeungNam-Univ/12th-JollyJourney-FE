@@ -1,0 +1,15 @@
+/* src/components/board/CategoryBoard.css */
+.category-board-container {
+    padding: 20px;
+  }
+  
+  .back-to-list-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  

@@ -14,6 +14,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Board />} />
+        <Route path="/info" element={<Board />} />
         <Route path="/posts" element={<Board />} />
         <Route path="/posts/:id" element={<CategoryBoard />} />
         <Route path="/posts/create" element={<CreatePost />} />

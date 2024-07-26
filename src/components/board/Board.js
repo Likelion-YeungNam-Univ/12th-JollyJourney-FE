@@ -2,9 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Board.css';
+import searchIcon from '../../assets/images/search-icon.png';
 
 const Board = () => {
   const [posts, setPosts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredPosts, setFilteredPosts] = useState([]);
 
   useEffect(() => {
     console.log("Fetching posts...");
@@ -12,17 +15,28 @@ const Board = () => {
       .then(response => response.json())
       .then(data => {
         console.log("Fetched posts:", data);
-        setPosts(data);
+        setPosts(data); // 초기에는 모든 게시글을 표시
       })
       .catch(error => console.error('Error fetching posts:', error));
   }, []);
+
+  const handleSearch = () => {
+    const filtered = posts.filter(post => 
+      post.title.includes(searchTerm) || post.summary.includes(searchTerm)
+    );
+    setFilteredPosts(filtered);
+  };
 
   return (
     <div className="board-container">
       <h1>육아 스트레스 해소 Tip</h1>
       <div className="search-container">
-        <input type="text" placeholder="검색할 키워드를 입력하세요." className="search-input" />
-        <button className="search-button">+</button>
+        <input type="text" placeholder="검색할 키워드를 입력하세요." className="search-input" value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button className="search-button" onClick={handleSearch}>
+          <img src={searchIcon} alt="Search" className="search-icon" />
+        </button>
       </div>
       <div className="post-list">
         {posts.map(post => (

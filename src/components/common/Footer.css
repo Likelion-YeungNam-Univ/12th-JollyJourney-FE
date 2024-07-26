@@ -1,0 +1,14 @@
+/* src/components/common/Footer.css */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f8f8; /* 원하는 배경색으로 변경 가능 */
+  }
+  
+  .footer-image {
+    max-width: 100%;
+    height: auto;
+  }
+  

@@ -23,32 +23,33 @@
 }
 
 .navbar-menu li {
-  margin-right: 20px;
+  margin-right: 40px; /* 메뉴 간의 간격 조정 */
 }
 
 .navbar-menu li a {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  font-size: 18px; /* 메뉴 글자 크기 조정 */
 }
 
 .navbar-search {
   display: flex;
   align-items: center;
   margin-right: auto;
-  margin-left: 20px;
+  margin-left: 40px; /* 검색창 왼쪽 여백 조정 */
 }
 
 .navbar-search-input {
-  width: 250px;
-  padding: 5px 10px;
-  font-size: 14px;
+  width: 300px; /* 검색창 너비 조정 */
+  padding: 10px 15px; /* 검색창 패딩 조정 */
+  font-size: 16px; /* 검색창 글자 크기 조정 */
   border: 1px solid #ddd;
   border-radius: 3px 0 0 3px;
 }
 
 .navbar-search-button {
-  padding: 5px 10px;
+  padding: 10px 15px; /* 검색 버튼 패딩 조정 */
   border: 1px solid #ddd;
   border-left: none;
   background-color: #007bff;
@@ -66,6 +67,5 @@
 
 .navbar-profile {
   font-weight: bold;
+  font-size: 18px; /* 프로필 글자 크기 조정 */
 }
-
-  

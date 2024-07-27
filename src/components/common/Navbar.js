@@ -22,9 +22,7 @@ const Navbar = () => {
         </Link>
         <ul className="navbar-menu">
           <li><Link to="/info">육아 스트레스 정보</Link></li>
-          <li><Link to="/growth">아이 성장일기</Link></li>
           <li><Link to="/record">나의 기록</Link></li>
-          <li><Link to="/community">커뮤니티</Link></li>
         </ul>
         <form className="navbar-search" onSubmit={handleSearch}>
           <input 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Highlight from 'react-highlight-words';
 import './Board.css';
 import Pagination from '../common/Pagination';
 import { posts as mockPosts } from '../../mockData';
@@ -63,8 +64,20 @@ const Board = () => {
           <div key={post.id} className="post-item">
             <img src={post.image} alt="Post" className="post-image" />
             <div className="post-content">
-              <h2>{post.title}</h2>
-              <p>{post.summary}</p>
+              <h2>
+                <Highlight
+                  searchWords={[searchKeyword]}
+                  textToHighlight={post.title}
+                  highlightStyle={{ backgroundColor: 'transparent', color: '#86BD63' }}
+                />
+              </h2>
+              <p>
+                <Highlight
+                  searchWords={[searchKeyword]}
+                  textToHighlight={post.summary}
+                  highlightStyle={{ backgroundColor: 'transparent', color: '#86BD63' }}
+                />
+              </p>
               <p className="post-date">
                 {post.date} <span className="post-author">by. {post.author}</span>
               </p>

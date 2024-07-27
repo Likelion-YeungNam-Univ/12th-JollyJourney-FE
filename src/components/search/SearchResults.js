@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
+import Highlight from 'react-highlight-words';
 import { posts } from '../../mockData';
 import './SearchResults.css';
 
@@ -21,8 +22,20 @@ const SearchResults = () => {
             <div key={post.id} className="post-item">
               <img src={post.image} alt="Post" className="post-image" />
               <div className="post-content">
-                <h2>{post.title}</h2>
-                <p>{post.summary}</p>
+                <h2>
+                  <Highlight
+                    searchWords={[query]}
+                    textToHighlight={post.title}
+                    highlightStyle={{ backgroundColor: 'transparent', color: '#86BD63' }}
+                  />
+                </h2>
+                <p>
+                  <Highlight
+                    searchWords={[query]}
+                    textToHighlight={post.summary}
+                    highlightStyle={{ backgroundColor: 'transparent', color: '#86BD63' }}
+                  />
+                </p>
                 <p className="post-date">
                   {post.date} <span className="post-author">by. {post.author}</span>
                 </p>

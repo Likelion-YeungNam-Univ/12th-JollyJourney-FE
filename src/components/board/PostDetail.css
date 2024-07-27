@@ -61,12 +61,19 @@
   }
   
   .comment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-top: 1px solid #ddd;
     padding: 10px 0;
   }
   
   .comment-item:first-child {
     border-top: none;
+  }
+  
+  .comment-content {
+    flex-grow: 1;
   }
   
   .comment-user {
@@ -80,11 +87,11 @@
   }
   
   .comment-actions {
-    margin-top: 5px;
+    display: flex;
+    gap: 10px;
   }
   
   .comment-actions span {
-    margin-right: 10px;
     cursor: pointer;
     color: #007bff;
   }
@@ -92,7 +99,7 @@
   .comment-likes {
     display: flex;
     align-items: center;
-    margin-top: 5px;
+    margin-top: 10px;
   }
   
   .like-icon {

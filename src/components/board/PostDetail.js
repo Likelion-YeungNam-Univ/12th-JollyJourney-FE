@@ -92,32 +92,34 @@ const PostDetail = () => {
         <div className="comments-list">
           {comments.map(comment => (
             <div key={comment.id} className="comment-item">
-              <span className="comment-user">{comment.user}</span>
-              <span className="comment-date">{comment.date}</span>
-              {editCommentId === comment.id ? (
-                <div className="edit-comment">
-                  <input 
-                    type="text" 
-                    value={editCommentText}
-                    onChange={(e) => setEditCommentText(e.target.value)}
+              <div className="comment-content">
+                <span className="comment-user">{comment.user}</span>
+                <span className="comment-date">{comment.date}</span>
+                {editCommentId === comment.id ? (
+                  <div className="edit-comment">
+                    <input 
+                      type="text" 
+                      value={editCommentText}
+                      onChange={(e) => setEditCommentText(e.target.value)}
+                    />
+                    <button onClick={handleUpdateComment}>저장</button>
+                  </div>
+                ) : (
+                  <p>{comment.text}</p>
+                )}
+                <div className="comment-likes">
+                  <img 
+                    src={comment.liked ? filledHeart : emptyHeart} 
+                    alt="like" 
+                    className="like-icon"
+                    onClick={() => toggleLike(comment.id)}
                   />
-                  <button onClick={handleUpdateComment}>저장</button>
+                  <span>{comment.likes}</span>
                 </div>
-              ) : (
-                <p>{comment.text}</p>
-              )}
+              </div>
               <div className="comment-actions">
                 <span onClick={() => handleEditComment(comment.id)}>수정</span>
                 <span onClick={() => handleDeleteComment(comment.id)}>삭제</span>
-              </div>
-              <div className="comment-likes">
-                <img 
-                  src={comment.liked ? filledHeart : emptyHeart} 
-                  alt="like" 
-                  className="like-icon"
-                  onClick={() => toggleLike(comment.id)}
-                />
-                <span>{comment.likes}</span>
               </div>
             </div>
           ))}

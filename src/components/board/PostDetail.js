@@ -74,7 +74,9 @@ const PostDetail = () => {
         </div>
       </div>
       <div className="post-content">
-        <p>{post.content}</p>
+        {post.content.split('\n').map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
       </div>
       <div className="comments-section">
         <h2>댓글 {comments.length}개</h2>

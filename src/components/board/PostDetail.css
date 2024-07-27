@@ -36,6 +36,7 @@
   }
   
   .comment-input {
+    display: flex;
     margin-bottom: 20px;
   }
   
@@ -43,7 +44,16 @@
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .comment-input button {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    background-color: #007bff;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
   }
   
   .comments-list {
@@ -77,5 +87,16 @@
     margin-right: 10px;
     cursor: pointer;
     color: #007bff;
+  }
+  
+  .edit-comment {
+    display: flex;
+    align-items: center;
+  }
+  
+  .edit-comment input {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
   }
   

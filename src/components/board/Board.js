@@ -46,18 +46,20 @@ const Board = () => {
 
   return (
     <div className="board-container">
-      <h1>육아 스트레스 정보</h1>
-      <div className="search-container">
-        <input 
-          type="text" 
-          placeholder="검색할 키워드를 입력하세요." 
-          className="search-input"
-          value={searchKeyword}
-          onChange={(e) => setSearchKeyword(e.target.value)}
-        />
-        <button className="search-button" onClick={handleSearch}>
-          <img src={searchIcon} alt="Search" className="search-icon" />
-        </button>
+      <div className="board-header">
+        <h1>육아 스트레스 정보</h1>
+        <div className="search-container">
+          <input 
+            type="text" 
+            placeholder="검색할 키워드를 입력하세요." 
+            className="search-input"
+            value={searchKeyword}
+            onChange={(e) => setSearchKeyword(e.target.value)}
+          />
+          <button className="search-button" onClick={handleSearch}>
+            <img src={searchIcon} alt="Search" className="search-icon" />
+          </button>
+        </div>
       </div>
       <div className="post-list">
         {currentPosts.map(post => (

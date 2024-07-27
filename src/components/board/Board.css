@@ -1,24 +1,38 @@
 /* src/components/board/Board.css */
 .board-container {
-  padding: 40px 20px; /* 상단 패딩 추가 */
+  padding: 0 20px; /* 패딩 조정 */
+}
+
+.board-header {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 100px 20px; /* 상하단 패딩 추가 */
+  background: url('../../assets/images/Rectangle\ 6865.png') no-repeat center center; /* 배경 이미지 설정 */
+  background-size: cover; /* 배경 이미지 크기 조정 */
+}
+
+.board-header h1 {
+  margin: 0;
+  font-size: 48px; /* 글자 크기 조정 */
 }
 
 .search-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px; /* 하단 마진 조정 */
+  margin: 30px 0; /* 위아래 마진 조정 */
 }
 
 .search-input {
-  width: 60%; /* 입력창 넓이 조정 */
-  padding: 15px; /* 패딩 조정 */
+  width: 50%;
+  padding: 15px;
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 5px 0 0 5px;
 }
 
 .search-button {
-  padding: 15px; /* 패딩 조정 */
+  padding: 15px;
   border: 1px solid #ddd;
   border-left: none;
   background-color: #007bff;
@@ -43,7 +57,7 @@
 .post-item {
   display: flex;
   border: 1px solid #ddd;
-  padding: 20px; /* 패딩 조정 */
+  padding: 20px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
   border-radius: 5px; /* 테두리 둥글게 */
@@ -62,13 +76,13 @@
 
 .post-content h2 {
   margin: 0 0 10px;
-  font-size: 18px; /* 글자 크기 조정 */
-  color: #333; /* 글자 색상 조정 */
+  font-size: 18px;
+  color: #333;
 }
 
 .post-content p {
   margin: 0 0 10px;
-  color: #555; /* 글자 색상 조정 */
+  color: #555;
 }
 
 .post-date {

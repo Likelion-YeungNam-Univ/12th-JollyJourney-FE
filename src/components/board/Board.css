@@ -1,24 +1,24 @@
 /* src/components/board/Board.css */
 .board-container {
-  padding: 20px;
+  padding: 40px 20px; /* 상단 패딩 추가 */
 }
 
 .search-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* 하단 마진 조정 */
 }
 
 .search-input {
-  width: 50%;
-  padding: 10px;
+  width: 60%; /* 입력창 넓이 조정 */
+  padding: 15px; /* 패딩 조정 */
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 5px 0 0 5px;
 }
 
 .search-button {
-  padding: 10px;
+  padding: 15px; /* 패딩 조정 */
   border: 1px solid #ddd;
   border-left: none;
   background-color: #007bff;
@@ -37,20 +37,23 @@
 .post-list {
   display: flex;
   flex-direction: column;
+  gap: 20px; /* 게시글 간의 간격 조정 */
 }
 
 .post-item {
   display: flex;
   border: 1px solid #ddd;
-  padding: 15px;
-  margin-bottom: 10px;
+  padding: 20px; /* 패딩 조정 */
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+  border-radius: 5px; /* 테두리 둥글게 */
 }
 
 .post-image {
-  width: 100px;
-  height: 100px;
+  width: 120px; /* 이미지 크기 조정 */
+  height: 120px;
   object-fit: cover;
-  margin-right: 15px;
+  margin-right: 20px; /* 오른쪽 마진 조정 */
 }
 
 .post-content {
@@ -59,10 +62,13 @@
 
 .post-content h2 {
   margin: 0 0 10px;
+  font-size: 18px; /* 글자 크기 조정 */
+  color: #333; /* 글자 색상 조정 */
 }
 
 .post-content p {
   margin: 0 0 10px;
+  color: #555; /* 글자 색상 조정 */
 }
 
 .post-date {
@@ -79,7 +85,7 @@
 .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px; /* 상단 마진 조정 */
 }
 
 .pagination-item {

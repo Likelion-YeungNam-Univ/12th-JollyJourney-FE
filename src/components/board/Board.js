@@ -1,23 +1,43 @@
-// src/components/board/Board.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Board.css';
 import Pagination from '../common/Pagination';
-import { posts } from '../../mockData';
+import { posts as mockPosts } from '../../mockData';
 import searchIcon from '../../assets/images/search-icon.png';
 
 const Board = () => {
+  const [posts, setPosts] = useState(mockPosts);
+  const [filteredPosts, setFilteredPosts] = useState(mockPosts);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
+  const [searchKeyword, setSearchKeyword] = useState('');
+
+  useEffect(() => {
+    const keyword = searchKeyword.toLowerCase();
+    const filtered = posts.filter(post => 
+      post.title.toLowerCase().includes(keyword) || 
+      post.summary.toLowerCase().includes(keyword) || 
+      post.content.toLowerCase().includes(keyword)
+    );
+    setFilteredPosts(filtered);
+    setCurrentPage(1); // 검색 후 첫 페이지로 이동
+  }, [searchKeyword, posts]);
 
   const handleSearch = () => {
-    // 검색 기능 구현
+    const keyword = searchKeyword.toLowerCase();
+    const filtered = posts.filter(post => 
+      post.title.toLowerCase().includes(keyword) || 
+      post.summary.toLowerCase().includes(keyword) || 
+      post.content.toLowerCase().includes(keyword)
+    );
+    setFilteredPosts(filtered);
+    setCurrentPage(1); // 검색 후 첫 페이지로 이동
   };
 
   // Calculate the displayed posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -25,12 +45,14 @@ const Board = () => {
 
   return (
     <div className="board-container">
-      <h1>육아 스트레스 해소 Tip</h1>
+      <h1>육아 스트레스 정보</h1>
       <div className="search-container">
         <input 
           type="text" 
           placeholder="검색할 키워드를 입력하세요." 
-          className="search-input" 
+          className="search-input"
+          value={searchKeyword}
+          onChange={(e) => setSearchKeyword(e.target.value)}
         />
         <button className="search-button" onClick={handleSearch}>
           <img src={searchIcon} alt="Search" className="search-icon" />
@@ -53,7 +75,7 @@ const Board = () => {
       </div>
       <Pagination
         currentPage={currentPage}
-        totalPages={Math.ceil(posts.length / postsPerPage)}
+        totalPages={Math.ceil(filteredPosts.length / postsPerPage)}
         onPageChange={handlePageChange}
       />
     </div>

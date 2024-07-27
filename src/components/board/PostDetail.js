@@ -60,7 +60,7 @@ const PostDetail = () => {
         <img src={post.image} alt={post.title} className="post-detail-image" />
         <h1>{post.title}</h1>
         <div className="post-meta">
-          <span>{post.date}</span>
+          <span>{post.date} <span className="post-author">by. {post.author}</span></span>
           <span>조회수 12 댓글 {comments.length}</span>
         </div>
       </div>

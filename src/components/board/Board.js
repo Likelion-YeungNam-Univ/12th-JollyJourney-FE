@@ -25,7 +25,7 @@ const Board = () => {
 
   return (
     <div className="board-container">
-      <h1>육아 스트레스 정보</h1>
+      <h1>육아 스트레스 해소 Tip</h1>
       <div className="search-container">
         <input 
           type="text" 
@@ -43,8 +43,10 @@ const Board = () => {
             <div className="post-content">
               <h2>{post.title}</h2>
               <p>{post.summary}</p>
+              <p className="post-date">
+                {post.date} <span className="post-author">by. {post.author}</span>
+              </p>
               <Link to={`/posts/${post.id}`}>자세히 보기</Link>
-              <p className="post-date">{post.date}</p>
             </div>
           </div>
         ))}

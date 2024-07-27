@@ -1,38 +1,71 @@
 /* src/components/common/Navbar.css */
 .navbar {
-    background-color: white;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .navbar-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .navbar-logo {
-    height: 40px;
-  }
-  
-  .navbar-menu {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar-menu li {
-    margin-right: 20px;
-  }
-  
-  .navbar-menu li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-  }
-  
-  .navbar-profile {
-    font-weight: bold;
-  }
+  background-color: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  height: 40px;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  margin-right: 20px;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+.navbar-search-input {
+  width: 250px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 3px 0 0 3px;
+}
+
+.navbar-search-button {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-left: none;
+  background-color: #007bff;
+  cursor: pointer;
+  border-radius: 0 3px 3px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-search-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.navbar-profile {
+  font-weight: bold;
+}
+
   

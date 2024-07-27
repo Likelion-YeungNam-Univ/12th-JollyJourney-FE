@@ -1,0 +1,46 @@
+.search-results-container {
+    padding: 20px;
+  }
+  
+  .post-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post-item {
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .post-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .post-content {
+    flex-grow: 1;
+  }
+  
+  .post-content h2 {
+    margin: 0 0 10px;
+  }
+  
+  .post-content p {
+    margin: 0 0 10px;
+  }
+  
+  .post-date {
+    color: #888;
+    font-size: 12px;
+  }
+  
+  .post-author {
+    margin-left: 5px;
+    color: #555;
+    font-size: 12px;
+  }
+  

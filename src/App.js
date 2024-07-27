@@ -5,6 +5,7 @@ import Board from './components/board/Board';
 import CategoryBoard from './components/board/CategoryBoard';
 import CreatePost from './components/board/CreatePost';
 import PostDetail from './components/board/PostDetail';
+import SearchResults from './components/search/SearchResults'; // 추가
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import './App.css';
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/posts" element={<Board />} />
         <Route path="/posts/:id" element={<PostDetail />} />
         <Route path="/posts/create" element={<CreatePost />} />
+        <Route path="/search" element={<SearchResults />} /> {/* 추가 */}
       </Routes>
       <Footer />
     </Router>
@@ -26,3 +28,4 @@ const App = () => {
 };
 
 export default App;
+

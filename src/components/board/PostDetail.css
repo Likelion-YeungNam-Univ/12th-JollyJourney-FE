@@ -93,7 +93,14 @@
   
   .comment-actions span {
     cursor: pointer;
-    color: #007bff;
+  }
+  
+  .comment-actions .edit {
+    color: #767676;
+  }
+  
+  .comment-actions .delete {
+    color: #FF0000;
   }
   
   .comment-likes {

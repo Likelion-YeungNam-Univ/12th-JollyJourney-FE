@@ -118,8 +118,8 @@ const PostDetail = () => {
                 </div>
               </div>
               <div className="comment-actions">
-                <span onClick={() => handleEditComment(comment.id)}>수정</span>
-                <span onClick={() => handleDeleteComment(comment.id)}>삭제</span>
+                <span className="edit" onClick={() => handleEditComment(comment.id)}>수정</span>
+                <span className="delete" onClick={() => handleDeleteComment(comment.id)}>삭제</span>
               </div>
             </div>
           ))}

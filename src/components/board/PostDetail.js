@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { posts } from '../../mockData';
+import emptyHeart from '../../assets/images/empty-heart.png';
+import filledHeart from '../../assets/images/filled-heart.png';
 import './PostDetail.css';
 
 const PostDetail = () => {
@@ -17,8 +19,8 @@ const PostDetail = () => {
     setPost(postDetail);
     // Initial comments - this could be fetched from an API
     setComments([
-      { id: 1, user: '페이스1', date: '2024.07.14', text: '정말 유용한 정보인데요??' },
-      { id: 2, user: '페이스2', date: '2024.07.14', text: '저에게 딱 맞는 이야기네요! 많이 도움 되었습니다. 앞으로도 이 방법을 자주 활용할 것 같아요.' }
+      { id: 1, user: '페이스1', date: '2024.07.14', text: '정말 유용한 정보인데요??', likes: 2, liked: false },
+      { id: 2, user: '페이스2', date: '2024.07.14', text: '저에게 딱 맞는 이야기네요! 많이 도움 되었습니다. 앞으로도 이 방법을 자주 활용할 것 같아요.', likes: 3, liked: false }
     ]);
   }, [id]);
 
@@ -28,7 +30,9 @@ const PostDetail = () => {
       id: comments.length + 1,
       user: '사용자', // This should be the logged-in user
       date: new Date().toISOString().split('T')[0],
-      text: newComment
+      text: newComment,
+      likes: 0,
+      liked: false
     };
     setComments([...comments, newCommentObj]);
     setNewComment('');
@@ -52,6 +56,12 @@ const PostDetail = () => {
     setComments(comments.filter(comment => comment.id !== id));
   };
 
+  const toggleLike = (id) => {
+    setComments(comments.map(comment =>
+      comment.id === id ? { ...comment, liked: !comment.liked, likes: comment.liked ? comment.likes - 1 : comment.likes + 1 } : comment
+    ));
+  };
+
   if (!post) return <p>Loading...</p>;
 
   return (
@@ -60,7 +70,7 @@ const PostDetail = () => {
         <img src={post.image} alt={post.title} className="post-detail-image" />
         <h1>{post.title}</h1>
         <div className="post-meta">
-          <span>{post.date} <span className="post-author">by. {post.author}</span></span>
+          <span>{post.date}</span>
           <span>조회수 12 댓글 {comments.length}</span>
         </div>
       </div>
@@ -99,6 +109,15 @@ const PostDetail = () => {
               <div className="comment-actions">
                 <span onClick={() => handleEditComment(comment.id)}>수정</span>
                 <span onClick={() => handleDeleteComment(comment.id)}>삭제</span>
+              </div>
+              <div className="comment-likes">
+                <img 
+                  src={comment.liked ? filledHeart : emptyHeart} 
+                  alt="like" 
+                  className="like-icon"
+                  onClick={() => toggleLike(comment.id)}
+                />
+                <span>{comment.likes}</span>
               </div>
             </div>
           ))}

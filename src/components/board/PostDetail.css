@@ -89,6 +89,19 @@
     color: #007bff;
   }
   
+  .comment-likes {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+  
+  .like-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
   .edit-comment {
     display: flex;
     align-items: center;

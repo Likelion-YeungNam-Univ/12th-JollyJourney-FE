@@ -1,4 +1,3 @@
-// src/components/board/PostDetail.js
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { posts } from '../../mockData';
@@ -75,7 +74,6 @@ const PostDetail = () => {
         </div>
       </div>
       <div className="post-content">
-        <p>{post.summary}</p>
         <p>{post.content}</p>
       </div>
       <div className="comments-section">

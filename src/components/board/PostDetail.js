@@ -13,13 +13,16 @@ const PostDetail = () => {
   const [editCommentId, setEditCommentId] = useState(null);
   const [editCommentText, setEditCommentText] = useState('');
 
+  // 현재 사용자 정보 (예시)
+  const currentUser = '사용자';
+
   useEffect(() => {
     const postDetail = posts.find(p => p.id === parseInt(id));
     setPost(postDetail);
-    // Initial comments - this could be fetched from an API
     setComments([
       { id: 1, user: '페이스1', date: '2024.07.14', text: '정말 유용한 정보인데요??', likes: 2, liked: false },
-      { id: 2, user: '페이스2', date: '2024.07.14', text: '저에게 딱 맞는 이야기네요! 많이 도움 되었습니다. 앞으로도 이 방법을 자주 활용할 것 같아요.', likes: 3, liked: false }
+      { id: 2, user: '페이스2', date: '2024.07.14', text: '저에게 딱 맞는 이야기네요! 많이 도움 되었습니다. 앞으로도 이 방법을 자주 활용할 것 같아요.', likes: 3, liked: false },
+      { id: 3, user: '사용자', date: '2024.07.14', text: '제가 작성한 댓글입니다.', likes: 0, liked: false }
     ]);
   }, [id]);
 
@@ -27,7 +30,7 @@ const PostDetail = () => {
     if (newComment.trim() === '') return;
     const newCommentObj = {
       id: comments.length + 1,
-      user: '사용자', // This should be the logged-in user
+      user: currentUser,
       date: new Date().toISOString().split('T')[0],
       text: newComment,
       likes: 0,
@@ -44,7 +47,7 @@ const PostDetail = () => {
   };
 
   const handleUpdateComment = () => {
-    setComments(comments.map(comment => 
+    setComments(comments.map(comment =>
       comment.id === editCommentId ? { ...comment, text: editCommentText } : comment
     ));
     setEditCommentId(null);
@@ -81,9 +84,9 @@ const PostDetail = () => {
       <div className="comments-section">
         <h2>댓글 {comments.length}개</h2>
         <div className="comment-input">
-          <input 
-            type="text" 
-            placeholder="댓글을 입력하세요." 
+          <input
+            type="text"
+            placeholder="댓글을 입력하세요."
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
           />
@@ -97,8 +100,8 @@ const PostDetail = () => {
                 <span className="comment-date">{comment.date}</span>
                 {editCommentId === comment.id ? (
                   <div className="edit-comment">
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       value={editCommentText}
                       onChange={(e) => setEditCommentText(e.target.value)}
                     />
@@ -108,19 +111,21 @@ const PostDetail = () => {
                   <p>{comment.text}</p>
                 )}
                 <div className="comment-likes">
-                  <img 
-                    src={comment.liked ? filledHeart : emptyHeart} 
-                    alt="like" 
+                  <img
+                    src={comment.liked ? filledHeart : emptyHeart}
+                    alt="like"
                     className="like-icon"
                     onClick={() => toggleLike(comment.id)}
                   />
                   <span>{comment.likes}</span>
                 </div>
               </div>
-              <div className="comment-actions">
-                <span className="edit" onClick={() => handleEditComment(comment.id)}>수정</span>
-                <span className="delete" onClick={() => handleDeleteComment(comment.id)}>삭제</span>
-              </div>
+              {comment.user === currentUser && (
+                <div className="comment-actions">
+                  <span className="edit" onClick={() => handleEditComment(comment.id)}>수정</span>
+                  <span className="delete" onClick={() => handleDeleteComment(comment.id)}>삭제</span>
+                </div>
+              )}
             </div>
           ))}
         </div>

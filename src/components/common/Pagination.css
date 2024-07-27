@@ -2,30 +2,24 @@
 .pagination {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
     margin-top: 20px;
   }
   
-  .pagination-item {
-    margin: 0 5px;
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    cursor: pointer;
-  }
-  
-  .pagination-item.active {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .pagination-arrow {
-    border: none;
+  .pagination button {
     background: none;
+    border: none;
     cursor: pointer;
-    padding: 10px;
   }
   
-  .pagination-arrow img {
-    width: 20px;
-    height: 20px;
+  .pagination-icon, .arrow-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .pagination-icon.active {
+    border: 2px solid #007bff;
+    border-radius: 50%;
   }
   

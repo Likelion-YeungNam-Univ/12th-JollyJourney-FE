@@ -1,129 +1,120 @@
 /* src/components/board/PostDetail.css */
 .post-detail-container {
     padding: 20px;
-  }
-  
-  .post-header {
+}
+
+.post-header {
     text-align: center;
-  }
-  
-  .post-detail-image {
+}
+
+.post-detail-image {
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;
-  }
-  
-  .post-meta {
+}
+
+.post-meta {
     display: flex;
     justify-content: center;
     gap: 10px;
     color: #888;
     font-size: 14px;
     margin-bottom: 20px;
-  }
-  
-  .post-content {
+}
+
+.post-content {
     margin-top: 20px;
     line-height: 1.6;
-  }
-  
-  .comments-section {
+}
+
+.comments-section {
     margin-top: 40px;
-  }
-  
-  .comments-section h2 {
+}
+
+.comments-section h2 {
     margin-bottom: 10px;
-  }
-  
-  .comment-input {
+}
+
+.comment-input {
     display: flex;
     margin-bottom: 20px;
-  }
-  
-  .comment-input input {
+}
+
+.comment-input textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 5px 0 0 5px;
-  }
-  
-  .comment-input button {
-    padding: 10px 20px;
-    border: 1px solid #ddd;
-    background-color: #007bff;
-    color: white;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-  }
-  
-  .comments-list {
+    border-radius: 5px;
+    resize: none;
+}
+
+.comments-list {
     margin-top: 20px;
-  }
-  
-  .comment-item {
+}
+
+.comment-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #ddd;
     padding: 10px 0;
-  }
-  
-  .comment-item:first-child {
+}
+
+.comment-item:first-child {
     border-top: none;
-  }
-  
-  .comment-content {
+}
+
+.comment-content {
     flex-grow: 1;
-  }
-  
-  .comment-user {
+}
+
+.comment-user {
     font-weight: bold;
-  }
-  
-  .comment-date {
+}
+
+.comment-date {
     margin-left: 10px;
     color: #888;
     font-size: 12px;
-  }
-  
-  .comment-actions {
+}
+
+.comment-actions {
     display: flex;
     gap: 10px;
-  }
-  
-  .comment-actions span {
+}
+
+.comment-actions span {
     cursor: pointer;
-  }
-  
-  .comment-actions .edit {
+}
+
+.comment-actions .edit {
     color: #767676;
-  }
-  
-  .comment-actions .delete {
+}
+
+.comment-actions .delete {
     color: #FF0000;
-  }
-  
-  .comment-likes {
+}
+
+.comment-likes {
     display: flex;
     align-items: center;
     margin-top: 10px;
-  }
-  
-  .like-icon {
+}
+
+.like-icon {
     width: 20px;
     height: 20px;
     cursor: pointer;
     margin-right: 5px;
-  }
-  
-  .edit-comment {
+}
+
+.edit-comment {
     display: flex;
     align-items: center;
-  }
-  
-  .edit-comment input {
+}
+
+.edit-comment input {
     flex: 1;
     padding: 5px;
     margin-right: 10px;
-  }
-  
+}

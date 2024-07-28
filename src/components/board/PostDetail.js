@@ -40,6 +40,13 @@ const PostDetail = () => {
     setNewComment('');
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleAddComment();
+    }
+  };
+
   const handleEditComment = (id) => {
     const comment = comments.find(c => c.id === id);
     setEditCommentId(id);
@@ -84,13 +91,13 @@ const PostDetail = () => {
       <div className="comments-section">
         <h2>댓글 {comments.length}개</h2>
         <div className="comment-input">
-          <input
-            type="text"
+          <textarea
             placeholder="댓글을 입력하세요."
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
+            onKeyDown={handleKeyDown}
+            rows="3"
           />
-          <button onClick={handleAddComment}>등록</button>
         </div>
         <div className="comments-list">
           {comments.map(comment => (

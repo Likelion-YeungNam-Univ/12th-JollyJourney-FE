@@ -52,7 +52,7 @@
   padding: 10px 15px; /* 검색 버튼 패딩 조정 */
   border: 1px solid #ddd;
   border-left: none;
-  background-color: #007bff;
+  background-color: #ddd;
   cursor: pointer;
   border-radius: 0 3px 3px 0;
   display: flex;

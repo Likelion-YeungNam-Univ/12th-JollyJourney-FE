@@ -34,7 +34,7 @@
   padding: 15px;
   border: 1px solid #ddd;
   border-left: none;
-  background-color: #007bff;
+  background-color: #ddd;
   cursor: pointer;
   border-radius: 0 25px 25px 0; /* 둥글게 */
   display: flex;

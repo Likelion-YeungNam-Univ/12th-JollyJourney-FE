@@ -37,7 +37,7 @@ const Navbar = () => {
           </button>
         </form>
         <div className="navbar-profile">
-          <Link to="/mypage">페이스 님</Link>
+          페이스 님
         </div>
       </div>
     </nav>

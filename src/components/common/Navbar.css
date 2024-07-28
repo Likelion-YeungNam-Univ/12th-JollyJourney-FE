@@ -66,6 +66,8 @@
 }
 
 .navbar-profile {
+  color: #000000; /* 텍스트 색상을 검정으로 변경 */
+  text-decoration: none; /* 밑줄 제거 */
   font-weight: bold;
   font-size: 18px; /* 프로필 글자 크기 조정 */
 }

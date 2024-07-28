@@ -45,7 +45,7 @@
   padding: 10px 15px; /* 검색창 패딩 조정 */
   font-size: 16px; /* 검색창 글자 크기 조정 */
   border: 1px solid #ddd;
-  border-radius: 3px 0 0 3px;
+  border-radius: 20px 0 0 20px; /* 좌측 둥글게 */
 }
 
 .navbar-search-button {
@@ -54,7 +54,7 @@
   border-left: none;
   background-color: #ddd;
   cursor: pointer;
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 20px 20px 0; /* 우측 둥글게 */
   display: flex;
   align-items: center;
   justify-content: center;

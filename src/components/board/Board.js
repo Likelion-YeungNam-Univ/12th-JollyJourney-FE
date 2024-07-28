@@ -64,26 +64,31 @@ const Board = () => {
       <div className="post-list">
         {currentPosts.map(post => (
           <div key={post.id} className="post-item">
-            <img src={post.image} alt="Post" className="post-image" />
+            <Link to={`/posts/${post.id}`}>
+              <img src={post.image} alt="Post" className="post-image" />
+            </Link>
             <div className="post-content">
               <h2>
-                <Highlight
-                  searchWords={[searchKeyword]}
-                  textToHighlight={post.title}
-                  highlightStyle={{ backgroundColor: 'transparent', color: '#86BD63' }}
-                />
+                <Link to={`/posts/${post.id}`} className="post-link">
+                  <Highlight
+                    searchWords={[searchKeyword]}
+                    textToHighlight={post.title}
+                    highlightStyle={{ backgroundColor: 'transparent', color: '#86BD63' }}
+                  />
+                </Link>
               </h2>
               <p>
-                <Highlight
-                  searchWords={[searchKeyword]}
-                  textToHighlight={post.summary}
-                  highlightStyle={{ backgroundColor: 'transparent', color: '#86BD63' }}
-                />
+                <Link to={`/posts/${post.id}`} className="post-link">
+                  <Highlight
+                    searchWords={[searchKeyword]}
+                    textToHighlight={post.summary}
+                    highlightStyle={{ backgroundColor: 'transparent', color: '#86BD63' }}
+                  />
+                </Link>
               </p>
               <p className="post-date">
                 {post.date} <span className="post-author">by. {post.author}</span>
               </p>
-              <Link to={`/posts/${post.id}`}>자세히 보기</Link>
             </div>
           </div>
         ))}

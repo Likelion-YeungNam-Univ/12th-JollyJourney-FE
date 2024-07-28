@@ -18,8 +18,9 @@
     height: 30px;
   }
   
-  .pagination-icon.active {
-    border: 2px solid #007bff;
+  .pagination-item.active {
+    background-color: #86BD63;
+    color: white;
     border-radius: 50%;
   }
   

@@ -27,7 +27,7 @@
   padding: 15px;
   font-size: 16px;
   border: 1px solid #ddd;
-  border-radius: 5px 0 0 5px;
+  border-radius: 25px 0 0 25px; /* 둥글게 */
 }
 
 .search-button {
@@ -36,7 +36,7 @@
   border-left: none;
   background-color: #007bff;
   cursor: pointer;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 25px 25px 0; /* 둥글게 */
   display: flex;
   align-items: center;
   justify-content: center;

@@ -66,8 +66,45 @@
 }
 
 .navbar-profile {
+  position: relative;
   color: #000000; /* 텍스트 색상을 검정으로 변경 */
   text-decoration: none; /* 밑줄 제거 */
   font-weight: bold;
   font-size: 18px; /* 프로필 글자 크기 조정 */
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* 수직 중앙 정렬 */
+}
+
+.navbar-profile .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.navbar-profile:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f8f8f8;
+}
+
+.navbar-profile img {
+  margin-left: 5px; /* 아이콘과 텍스트 간격 */
+  width: 20px;
+  height: 20px;
 }

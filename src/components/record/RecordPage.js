@@ -8,7 +8,13 @@ const RecordPage = () => {
   const navigate = useNavigate();
 
   const handleDateClick = (date) => {
-    const formattedDate = date.toISOString().split('T')[0]; // YYYY-MM-DD 형식으로 변환
+    console.log(date);
+    const [yyyy, mm, dd] = [
+      date.getFullYear(),
+      String(date.getMonth() + 1).padStart(2, '0'),
+      String(date.getDate()).padStart(2, '0')
+    ];
+    const formattedDate = `${yyyy}-${mm}-${dd}`;
     navigate(`/record/${formattedDate}`);
   };
 
@@ -18,7 +24,6 @@ const RecordPage = () => {
       <Calendar
         onClickDay={handleDateClick}
         locale="en-US" // 영어로 설정
-        calendarType="US" // 일요일부터 시작하도록 설정
         formatDay={(locale, date) => date.getDate()} // '일'을 제거하고 숫자만 표시
       />
     </div>
@@ -26,3 +31,4 @@ const RecordPage = () => {
 };
 
 export default RecordPage;
+

@@ -28,21 +28,21 @@ const RecordDetail = () => {
   }, [date]);
 
   const handleButtonClick = (category, value) => {
-    setRecord(prevRecord => {
-      const updatedArray = prevRecord[category].includes(value)
-        ? prevRecord[category].filter(item => item !== value)
-        : [...prevRecord[category], value];
-      return { ...prevRecord, [category]: updatedArray };
-    });
+    if (category === 'sleepQuality') {
+      setRecord(prevRecord => ({ ...prevRecord, [category]: value }));
+    } else {
+      setRecord(prevRecord => {
+        const updatedArray = prevRecord[category].includes(value)
+          ? prevRecord[category].filter(item => item !== value)
+          : [...prevRecord[category], value];
+        return { ...prevRecord, [category]: updatedArray };
+      });
+    }
   };
 
   const handleChange = (e) => {
-    const { name, value, type } = e.target;
-    if (type === 'radio') {
-      setRecord(prevRecord => ({ ...prevRecord, [name]: value }));
-    } else {
-      setRecord(prevRecord => ({ ...prevRecord, [name]: value }));
-    }
+    const { name, value } = e.target;
+    setRecord(prevRecord => ({ ...prevRecord, [name]: value }));
   };
 
   const handleSave = () => {
@@ -98,18 +98,15 @@ const RecordDetail = () => {
 
         <div className="form-group">
           <label>수면의 질</label>
-          <div className="radio-group">
+          <div className="button-group">
             {['좋음', '보통', '나쁨'].map(quality => (
-              <label key={quality}>
-                <input
-                  type="radio"
-                  name="sleepQuality"
-                  value={quality}
-                  checked={record.sleepQuality === quality}
-                  onChange={handleChange}
-                />
+              <button
+                key={quality}
+                className={`condition-button ${record.sleepQuality === quality ? 'selected' : ''}`}
+                onClick={() => handleButtonClick('sleepQuality', quality)}
+              >
                 {quality}
-              </label>
+              </button>
             ))}
           </div>
         </div>

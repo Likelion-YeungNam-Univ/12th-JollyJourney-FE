@@ -12,3 +12,8 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border: none;
   }
+  .react-calendar__month-view__weekdays {
+    display: flex;
+    justify-content: space-between;
+  }
+  

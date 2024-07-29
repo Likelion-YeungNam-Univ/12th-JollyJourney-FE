@@ -15,7 +15,12 @@ const RecordPage = () => {
   return (
     <div className="record-page-container">
       <h1>나의 기록</h1>
-      <Calendar onClickDay={handleDateClick} />
+      <Calendar
+        onClickDay={handleDateClick}
+        locale="en-US" // 영어로 설정
+        calendarType="US" // 일요일부터 시작하도록 설정
+        formatDay={(locale, date) => date.getDate()} // '일'을 제거하고 숫자만 표시
+      />
     </div>
   );
 };

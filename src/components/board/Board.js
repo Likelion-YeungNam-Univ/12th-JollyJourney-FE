@@ -61,6 +61,7 @@ const Board = () => {
           </button>
         </div>
       </div>
+      <div className="margin-between"></div> {/* 추가된 부분 */}
       <div className="post-list">
         {currentPosts.map(post => (
           <div key={post.id} className="post-item">

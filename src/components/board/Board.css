@@ -47,13 +47,17 @@
   height: 20px;
 }
 
+/* 추가된 스타일 */
+.margin-between {
+  height: 50px; /* 마진 높이 설정 */
+}
+
 .post-list {
   display: flex;
   flex-direction: column;
   gap: 20px; /* 게시글 간의 간격 조정 */
   margin: 0 300px; /* 게시글 리스트 좌우 마진 설정 */
 }
-
 
 .post-item {
   display: flex;

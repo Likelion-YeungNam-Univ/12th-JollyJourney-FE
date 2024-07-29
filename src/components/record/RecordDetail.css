@@ -1,5 +1,8 @@
 .record-detail-container {
     padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
   }
   
   .record-form {
@@ -7,12 +10,11 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: auto;
   }
   
   .form-group {
     margin-bottom: 20px;
+    text-align: left;
   }
   
   .checkbox-group {
@@ -23,6 +25,38 @@
   
   .checkbox-group input[type="checkbox"] {
     margin-right: 5px;
+  }
+  
+  .radio-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .radio-group input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .form-group input[type="number"] {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+    height: 60px;
   }
   
   .form-buttons {

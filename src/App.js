@@ -1,3 +1,4 @@
+// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Board from './components/board/Board';
@@ -10,7 +11,6 @@ import RecordDetail from './components/record/RecordDetail'; // 추가
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import './App.css';
-
 const App = () => {
   return (
     <Router>

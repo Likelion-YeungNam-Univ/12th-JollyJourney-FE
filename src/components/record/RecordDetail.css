@@ -1,0 +1,49 @@
+.record-detail-container {
+    padding: 20px;
+  }
+  
+  .record-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .save-button, .edit-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .save-button {
+    background-color: #86BD63;
+    color: white;
+  }
+  
+  .edit-button {
+    background-color: grey;
+    color: white;
+  }
+  

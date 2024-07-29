@@ -1,3 +1,4 @@
+// src/components/search/SearchResults.js
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import Highlight from 'react-highlight-words';

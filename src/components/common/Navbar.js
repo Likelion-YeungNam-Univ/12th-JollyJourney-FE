@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/image.png';
-import searchIcon from '../../assets/images/search-icon.png'; // 돋보기 아이콘 이미지
-import arrowIcon from '../../assets/images/arrow-icon.png'; // 아래방향 화살표 아이콘 이미지
+import searchIcon from '../../assets/images/search-icon.png';
+import arrowIcon from '../../assets/images/arrow-icon.png';
 import './Navbar.css';
 
 const Navbar = () => {

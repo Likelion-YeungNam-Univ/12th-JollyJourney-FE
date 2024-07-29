@@ -1,0 +1,41 @@
+.record-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .record-header {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .record-details {
+    margin-top: 20px;
+  }
+  
+  .react-calendar {
+    width: 350px;
+    max-width: 100%;
+    background: white;
+    border: 1px solid #a0a096;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.125em;
+    margin: 0 auto;
+  }
+  
+  .react-calendar__navigation button {
+    color: #6f48eb;
+    min-width: 44px;
+    background: none;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+  
+  .react-calendar__tile--now {
+    background: #ffff76 !important;
+  }
+  
+  .react-calendar__tile--active {
+    background: #6f48eb !important;
+    color: white !important;
+  }
+  

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { posts } from '../../mockData';
 import emptyHeart from '../../assets/images/empty-heart.png';
 import filledHeart from '../../assets/images/filled-heart.png';
@@ -12,6 +12,7 @@ const PostDetail = () => {
   const [newComment, setNewComment] = useState('');
   const [editCommentId, setEditCommentId] = useState(null);
   const [editCommentText, setEditCommentText] = useState('');
+  const [isComposing, setIsComposing] = useState(false);
 
   // 현재 사용자 정보 (예시)
   const currentUser = '사용자';
@@ -41,7 +42,7 @@ const PostDetail = () => {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === 'Enter' && !e.shiftKey && !isComposing) {
       e.preventDefault();
       handleAddComment();
     }
@@ -96,6 +97,8 @@ const PostDetail = () => {
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
             onKeyDown={handleKeyDown}
+            onCompositionStart={() => setIsComposing(true)}
+            onCompositionEnd={() => setIsComposing(false)}
             rows="3"
           />
         </div>

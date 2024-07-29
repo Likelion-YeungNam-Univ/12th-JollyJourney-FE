@@ -48,6 +48,18 @@
     resize: none;
 }
 
+.comment-submit-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.comment-submit-button img {
+    width: 20px;
+    height: 20px;
+}
+
 .comments-list {
     margin-top: 20px;
 }

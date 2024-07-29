@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { posts } from '../../mockData';
 import emptyHeart from '../../assets/images/empty-heart.png';
 import filledHeart from '../../assets/images/filled-heart.png';
+import registerIcon from '../../assets/images/register-icon.png'; // 로컬 이미지 파일 추가
 import './PostDetail.css';
 
 const PostDetail = () => {
@@ -101,6 +102,9 @@ const PostDetail = () => {
             onCompositionEnd={() => setIsComposing(false)}
             rows="3"
           />
+          <button onClick={handleAddComment} className="comment-submit-button">
+            <img src={registerIcon} alt="등록" />
+          </button>
         </div>
         <div className="comments-list">
           {comments.map(comment => (

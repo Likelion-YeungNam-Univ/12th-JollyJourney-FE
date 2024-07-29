@@ -27,16 +27,18 @@ const RecordDetail = () => {
     }
   }, [date]);
 
+  const handleButtonClick = (category, value) => {
+    setRecord(prevRecord => {
+      const updatedArray = prevRecord[category].includes(value)
+        ? prevRecord[category].filter(item => item !== value)
+        : [...prevRecord[category], value];
+      return { ...prevRecord, [category]: updatedArray };
+    });
+  };
+
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (type === 'checkbox') {
-      setRecord(prevRecord => {
-        const updatedArray = checked
-          ? [...prevRecord[name], value]
-          : prevRecord[name].filter(item => item !== value);
-        return { ...prevRecord, [name]: updatedArray };
-      });
-    } else if (type === 'radio') {
+    const { name, value, type } = e.target;
+    if (type === 'radio') {
       setRecord(prevRecord => ({ ...prevRecord, [name]: value }));
     } else {
       setRecord(prevRecord => ({ ...prevRecord, [name]: value }));
@@ -60,41 +62,31 @@ const RecordDetail = () => {
       <div className="record-form">
         <div className="form-group">
           <label>몸상태</label>
-          <div className="checkbox-group">
-            <input type="checkbox" id="headache" name="bodyCondition" value="두통" checked={record.bodyCondition.includes('두통')} onChange={handleChange} />
-            <label htmlFor="headache">두통</label>
-            <input type="checkbox" id="backPain" name="bodyCondition" value="복통" checked={record.bodyCondition.includes('복통')} onChange={handleChange} />
-            <label htmlFor="backPain">복통</label>
-            <input type="checkbox" id="constipation" name="bodyCondition" value="변비" checked={record.bodyCondition.includes('변비')} onChange={handleChange} />
-            <label htmlFor="constipation">변비</label>
-            <input type="checkbox" id="digestiveIssues" name="bodyCondition" value="식욕부진" checked={record.bodyCondition.includes('식욕부진')} onChange={handleChange} />
-            <label htmlFor="digestiveIssues">식욕부진</label>
-            <input type="checkbox" id="vomiting" name="bodyCondition" value="오한" checked={record.bodyCondition.includes('오한')} onChange={handleChange} />
-            <label htmlFor="vomiting">오한</label>
-            <input type="checkbox" id="musclePain" name="bodyCondition" value="근육통" checked={record.bodyCondition.includes('근육통')} onChange={handleChange} />
-            <label htmlFor="musclePain">근육통</label>
-            <input type="checkbox" id="skinTrouble" name="bodyCondition" value="피부트러블" checked={record.bodyCondition.includes('피부트러블')} onChange={handleChange} />
-            <label htmlFor="skinTrouble">피부트러블</label>
-            <input type="checkbox" id="other" name="bodyCondition" value="기타" checked={record.bodyCondition.includes('기타')} onChange={handleChange} />
-            <label htmlFor="other">기타</label>
+          <div className="button-group">
+            {['두통', '복통', '변비', '식욕부진', '오한', '허리통증', '소화불량', '근육통', '피부트러블', '기타'].map(condition => (
+              <button
+                key={condition}
+                className={`condition-button ${record.bodyCondition.includes(condition) ? 'selected' : ''}`}
+                onClick={() => handleButtonClick('bodyCondition', condition)}
+              >
+                {condition}
+              </button>
+            ))}
           </div>
         </div>
 
         <div className="form-group">
           <label>기분상태</label>
-          <div className="checkbox-group">
-            <input type="checkbox" id="happy" name="mood" value="행복" checked={record.mood.includes('행복')} onChange={handleChange} />
-            <label htmlFor="happy">행복</label>
-            <input type="checkbox" id="anxiety" name="mood" value="불안" checked={record.mood.includes('불안')} onChange={handleChange} />
-            <label htmlFor="anxiety">불안</label>
-            <input type="checkbox" id="sensitive" name="mood" value="예민" checked={record.mood.includes('예민')} onChange={handleChange} />
-            <label htmlFor="sensitive">예민</label>
-            <input type="checkbox" id="depressed" name="mood" value="우울" checked={record.mood.includes('우울')} onChange={handleChange} />
-            <label htmlFor="depressed">우울</label>
-            <input type="checkbox" id="worry" name="mood" value="걱정" checked={record.mood.includes('걱정')} onChange={handleChange} />
-            <label htmlFor="worry">걱정</label>
-            <input type="checkbox" id="lethargic" name="mood" value="무기력감" checked={record.mood.includes('무기력감')} onChange={handleChange} />
-            <label htmlFor="lethargic">무기력감</label>
+          <div className="button-group">
+            {['행복', '불안', '예민', '우울', '걱정', '무기력감', '기타'].map(mood => (
+              <button
+                key={mood}
+                className={`condition-button ${record.mood.includes(mood) ? 'selected' : ''}`}
+                onClick={() => handleButtonClick('mood', mood)}
+              >
+                {mood}
+              </button>
+            ))}
           </div>
         </div>
 
@@ -107,12 +99,18 @@ const RecordDetail = () => {
         <div className="form-group">
           <label>수면의 질</label>
           <div className="radio-group">
-            <input type="radio" id="good" name="sleepQuality" value="좋음" checked={record.sleepQuality === '좋음'} onChange={handleChange} />
-            <label htmlFor="good">좋음</label>
-            <input type="radio" id="average" name="sleepQuality" value="보통" checked={record.sleepQuality === '보통'} onChange={handleChange} />
-            <label htmlFor="average">보통</label>
-            <input type="radio" id="bad" name="sleepQuality" value="나쁨" checked={record.sleepQuality === '나쁨'} onChange={handleChange} />
-            <label htmlFor="bad">나쁨</label>
+            {['좋음', '보통', '나쁨'].map(quality => (
+              <label key={quality}>
+                <input
+                  type="radio"
+                  name="sleepQuality"
+                  value={quality}
+                  checked={record.sleepQuality === quality}
+                  onChange={handleChange}
+                />
+                {quality}
+              </label>
+            ))}
           </div>
         </div>
 

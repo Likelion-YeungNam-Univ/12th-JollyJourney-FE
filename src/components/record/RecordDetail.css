@@ -17,14 +17,23 @@
     text-align: left;
   }
   
-  .checkbox-group {
+  .button-group {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
   }
   
-  .checkbox-group input[type="checkbox"] {
-    margin-right: 5px;
+  .condition-button {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #f8f8f8;
+  }
+  
+  .condition-button.selected {
+    background-color: #86BD63;
+    color: white;
   }
   
   .radio-group {

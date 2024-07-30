@@ -18,6 +18,20 @@ const RecordPage = () => {
     navigate(`/record/${formattedDate}`);
   };
 
+  const tileClassName = ({ date, view }) => {
+    if (view === 'month') {
+      const today = new Date();
+      if (
+        date.getFullYear() === today.getFullYear() &&
+        date.getMonth() === today.getMonth() &&
+        date.getDate() === today.getDate()
+      ) {
+        return 'react-calendar__tile--today';
+      }
+    }
+    return null;
+  };
+
   return (
     <div className="record-page-container">
       <h1>나의 기록</h1>
@@ -25,6 +39,7 @@ const RecordPage = () => {
         onClickDay={handleDateClick}
         locale="en-US" // 영어로 설정
         formatDay={(locale, date) => date.getDate()} // '일'을 제거하고 숫자만 표시
+        tileClassName={tileClassName}
       />
     </div>
   );

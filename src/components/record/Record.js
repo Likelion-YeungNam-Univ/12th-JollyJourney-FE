@@ -10,6 +10,20 @@ const Record = () => {
     setDate(date);
   };
 
+  const tileClassName = ({ date, view }) => {
+    if (view === 'month') {
+      const today = new Date();
+      if (
+        date.getFullYear() === today.getFullYear() &&
+        date.getMonth() === today.getMonth() &&
+        date.getDate() === today.getDate()
+      ) {
+        return 'react-calendar__tile--today';
+      }
+    }
+    return null;
+  };
+  
   return (
     <div className="record-container">
       <h1 className="record-header">나의 기록</h1>

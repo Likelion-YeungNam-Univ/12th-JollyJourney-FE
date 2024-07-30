@@ -81,8 +81,11 @@ const PostDetail = () => {
         <img src={post.image} alt={post.title} className="post-detail-image" />
         <h1>{post.title}</h1>
         <div className="post-meta">
-          <span>{post.date}</span>
-          <span>조회수 12 댓글 {comments.length}</span>
+          <span className="post-date">{post.date}</span>
+          <div className="post-stats">
+            <span>조회수 12</span>
+            <span>댓글 {comments.length}</span>
+          </div>
         </div>
       </div>
       <div className="post-content">

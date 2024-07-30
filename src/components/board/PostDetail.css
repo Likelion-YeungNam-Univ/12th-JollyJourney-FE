@@ -11,18 +11,24 @@
 .post-detail-image {
     max-width: 100%;
     height: auto;
+    margin-top: 50px;
     margin-bottom: 20px;
 }
 
 .post-meta {
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    flex-direction: column; /* 수직 정렬 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+    gap: 5px; /* 요소 간의 간격 */
     color: #888;
     font-size: 14px;
     margin-bottom: 20px;
 }
 
+.post-stats {
+    display: flex;
+    gap: 10px; /* 조회수와 댓글수 간격 */
+}
 .post-content {
     margin-top: 20px;
     line-height: 1.6;

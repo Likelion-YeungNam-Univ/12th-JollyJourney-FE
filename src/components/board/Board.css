@@ -9,7 +9,7 @@
   padding: 100px 20px; /* 상하단 패딩 추가 */
   background: url('../../assets/images/Rectangle\ 6865.png') no-repeat center center; /* 배경 이미지 설정 */
   background-size: cover; /* 배경 이미지 크기 조정 */
-  margin-bottom: 50px; /* 하단 마진 추가 */
+  margin-bottom: 80px; /* 하단 마진 추가 */
 }
 
 .board-header h1 {
@@ -27,13 +27,13 @@
   width: 50%;
   padding: 15px;
   font-size: 16px;
-  border: 1px solid #ddd;
+  border: 1px solid #FFFFFF;
   border-radius: 25px 0 0 25px; /* 둥글게 */
 }
 
 .search-button {
   padding: 0px;
-  border: 1px solid #ddd;
+  border: 1px solid #FFFFFF;
   border-left: none;
   background-color: #FFFFFF;
   cursor: pointer;

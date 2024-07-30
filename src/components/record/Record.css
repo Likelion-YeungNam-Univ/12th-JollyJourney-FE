@@ -37,12 +37,15 @@
     border-radius: 50%;
 }
 
-  .react-calendar__tile--now {
-    background: #ffff76 !important;
-  }
+.react-calendar__tile--now {
+  background: #86BD63 !important; /* 변경된 색상 */
+}
   
   .react-calendar__tile--active {
     background: #6f48eb !important;
     color: white !important;
   }
   
+  .react-calendar__month-view__weekdays__weekday abbr {
+    color: inherit; /* 주말의 색상 구분을 없애기 위해 추가 */
+}

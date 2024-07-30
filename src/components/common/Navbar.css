@@ -49,7 +49,7 @@
 }
 
 .navbar-search-button {
-  padding: 10px 15px; /* 검색 버튼 패딩 조정 */
+  padding: 0px; /* 검색 버튼 패딩 조정 */
   border: 1px solid #ddd;
   border-left: none;
   background-color: #ddd;
@@ -61,8 +61,8 @@
 }
 
 .navbar-search-button img {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
 }
 
 .navbar-profile {

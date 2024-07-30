@@ -1,6 +1,7 @@
 /* src/components/board/PostDetail.css */
 .post-detail-container {
     padding: 20px;
+    margin: 0 300px;
 }
 
 .post-header {
@@ -53,11 +54,13 @@
     border: none;
     cursor: pointer;
     padding: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .comment-submit-button img {
-    width: 20px;
-    height: 20px;
+    width: 40px; /* 이미지 크기 조절 */
+    height: 40px; /* 이미지 크기 조절 */
 }
 
 .comments-list {

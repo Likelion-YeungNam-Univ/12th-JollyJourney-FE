@@ -4,9 +4,11 @@
   }
 
   .react-calendar {
-    width: 100%;
+    width: 400px;
+    height: 400px;
     max-width: 600px;
     margin: auto;
+    padding: 50px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);

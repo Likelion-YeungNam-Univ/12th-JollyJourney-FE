@@ -38,3 +38,9 @@
   background: #6f48eb !important;
   color: white !important;
 }
+
+.react-calendar__tile--written {
+  background: #FFCE81 !important; /* 글이 작성된 날짜 색상 */
+  color: white !important;
+  border-radius: 50%;
+}

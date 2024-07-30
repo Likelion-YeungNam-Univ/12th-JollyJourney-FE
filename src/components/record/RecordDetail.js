@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './RecordDetail.css';
 
 const RecordDetail = () => {
   const { date } = useParams();
+  const navigate = useNavigate();
   const [record, setRecord] = useState({
     bodyCondition: [],
     mood: [],
@@ -49,6 +50,13 @@ const RecordDetail = () => {
     // 로컬 스토리지에 기록 저장
     localStorage.setItem(date, JSON.stringify(record));
     alert('기록이 저장되었습니다.');
+  };
+
+  const handleDelete = () => {
+    // 로컬 스토리지에서 기록 삭제
+    localStorage.removeItem(date);
+    alert('기록이 삭제되었습니다.');
+    navigate('/record');
   };
 
   const handleEdit = () => {
@@ -137,6 +145,7 @@ const RecordDetail = () => {
         <div className="form-buttons">
           <button className="edit-button" onClick={handleEdit}>수정</button>
           <button className="save-button" onClick={handleSave}>저장</button>
+          <button className="delete-button" onClick={handleDelete}>삭제</button> {/* 삭제 버튼 추가 */}
         </div>
       </div>
     </div>

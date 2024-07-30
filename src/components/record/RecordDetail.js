@@ -145,7 +145,7 @@ const RecordDetail = () => {
         <div className="form-buttons">
           <button className="edit-button" onClick={handleEdit}>수정</button>
           <button className="save-button" onClick={handleSave}>저장</button>
-          <button className="delete-button" onClick={handleDelete}>삭제</button> {/* 삭제 버튼 추가 */}
+          <button className="delete-button" onClick={handleDelete}>삭제</button>
         </div>
       </div>
     </div>

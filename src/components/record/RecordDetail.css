@@ -1,92 +1,91 @@
 .record-detail-container {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
-  }
-  
-  .record-form {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .button-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .condition-button {
-    padding: 10px 20px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    cursor: pointer;
-    background-color: #f8f8f8;
-  }
-  
-  .condition-button.selected {
-    background-color: #86BD63;
-    color: white;
-  }
-  
-  .radio-group {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .radio-group input[type="radio"] {
-    margin-right: 5px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  
-  .form-group input[type="number"] {
-    width: calc(50% - 10px);
-    margin-right: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    resize: none;
-    height: 60px;
-  }
-  
-  .form-buttons {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .save-button, .edit-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .save-button {
-    background-color: #86BD63;
-    color: white;
-  }
-  
-  .edit-button {
-    background-color: grey;
-    color: white;
-  }
-  
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.record-form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.condition-button {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #f8f8f8;
+}
+
+.condition-button.selected {
+  background-color: #86BD63;
+  color: white;
+}
+
+.radio-group {
+  display: flex;
+  gap: 10px;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 5px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form-group input[type="number"] {
+  width: calc(50% - 10px);
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: none;
+  height: 60px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-button, .edit-button, .delete-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-button {
+  background-color: #86BD63;
+  color: white;
+}
+
+.edit-button, .delete-button {
+  background-color: #BDBDBD;
+  color: white;
+}

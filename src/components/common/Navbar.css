@@ -52,7 +52,7 @@
   padding: 0px; /* 검색 버튼 패딩 조정 */
   border: 1px solid #ddd;
   border-left: none;
-  background-color: #ddd;
+  background-color: #FFFFFF;
   cursor: pointer;
   border-radius: 0 20px 20px 0; /* 우측 둥글게 */
   display: flex;

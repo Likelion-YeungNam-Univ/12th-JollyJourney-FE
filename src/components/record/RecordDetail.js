@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './RecordDetail.css';
+import backButton from '../../assets/images/back-button.png'; // 이미지 경로에 맞게 수정
 
 const RecordDetail = () => {
   const { date } = useParams();
@@ -64,9 +65,16 @@ const RecordDetail = () => {
     alert('수정 모드입니다.');
   };
 
+  const handleBack = () => {
+    navigate('/record');
+  };
+
   return (
     <div className="record-detail-container">
-      <h2>{date}</h2>
+      <div className="record-header">
+        <img src={backButton} alt="뒤로가기" className="back-button" onClick={handleBack} />
+        <h2>{date}</h2>
+      </div>
       <div className="record-form">
         <div className="form-group">
           <label>몸상태</label>

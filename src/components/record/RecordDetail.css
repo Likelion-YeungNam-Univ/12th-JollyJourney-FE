@@ -5,6 +5,23 @@
   text-align: center;
 }
 
+.record-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
 .record-form {
   background: white;
   padding: 20px;

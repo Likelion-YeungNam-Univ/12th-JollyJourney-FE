@@ -5,7 +5,6 @@ import emptyHeart from '../../assets/images/empty-heart.png';
 import filledHeart from '../../assets/images/filled-heart.png';
 import registerIcon from '../../assets/images/register-icon.png'; // 로컬 이미지 파일 추가
 import './PostDetail.css';
-
 const PostDetail = () => {
   const { id } = useParams();
   const [post, setPost] = useState(null);
@@ -14,10 +13,8 @@ const PostDetail = () => {
   const [editCommentId, setEditCommentId] = useState(null);
   const [editCommentText, setEditCommentText] = useState('');
   const [isComposing, setIsComposing] = useState(false);
-
   // 현재 사용자 정보 (예시)
   const currentUser = '사용자';
-
   useEffect(() => {
     const postDetail = posts.find(p => p.id === parseInt(id));
     setPost(postDetail);
@@ -27,7 +24,6 @@ const PostDetail = () => {
       { id: 3, user: '사용자', date: '2024.07.14', text: '제가 작성한 댓글입니다.', likes: 0, liked: false }
     ]);
   }, [id]);
-
   const handleAddComment = () => {
     if (newComment.trim() === '') return;
     const newCommentObj = {
@@ -41,20 +37,17 @@ const PostDetail = () => {
     setComments([...comments, newCommentObj]);
     setNewComment('');
   };
-
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey && !isComposing) {
       e.preventDefault();
       handleAddComment();
     }
   };
-
   const handleEditComment = (id) => {
     const comment = comments.find(c => c.id === id);
     setEditCommentId(id);
     setEditCommentText(comment.text);
   };
-
   const handleUpdateComment = () => {
     setComments(comments.map(comment =>
       comment.id === editCommentId ? { ...comment, text: editCommentText } : comment
@@ -62,26 +55,22 @@ const PostDetail = () => {
     setEditCommentId(null);
     setEditCommentText('');
   };
-
   const handleDeleteComment = (id) => {
     setComments(comments.filter(comment => comment.id !== id));
   };
-
   const toggleLike = (id) => {
     setComments(comments.map(comment =>
       comment.id === id ? { ...comment, liked: !comment.liked, likes: comment.liked ? comment.likes - 1 : comment.likes + 1 } : comment
     ));
   };
-
   if (!post) return <p>Loading...</p>;
-
   return (
     <div className="post-detail-container">
       <div className="post-header">
         <img src={post.image} alt={post.title} className="post-detail-image" />
         <h1>{post.title}</h1>
         <div className="post-meta">
-          <span className="post-date">{post.date}</span>
+        <span className="post-date">{post.date}</span>
           <div className="post-stats">
             <span>조회수 12</span>
             <span>댓글 {comments.length}</span>
@@ -150,5 +139,4 @@ const PostDetail = () => {
     </div>
   );
 };
-
 export default PostDetail;

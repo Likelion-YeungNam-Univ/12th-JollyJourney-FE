@@ -2,24 +2,26 @@
   padding: 20px;
   max-width: 800px;
   margin: auto;
-  text-align: center;
+  text-align: left;
 }
 
 .record-header {
   display: flex;
   align-items: center;
-  justify-content: center;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .back-button {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+
+.record-date {
+  margin-left: 10px; /* 뒤로가기 버튼과 날짜 사이의 간격 조절 */
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .record-form {

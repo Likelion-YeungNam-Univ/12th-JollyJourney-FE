@@ -73,7 +73,7 @@ const RecordDetail = () => {
     <div className="record-detail-container">
       <div className="record-header">
         <img src={backButton} alt="뒤로가기" className="back-button" onClick={handleBack} />
-        <h2>{date}</h2>
+        <h2 className="record-date">{date}</h2>
       </div>
       <div className="record-form">
         <div className="form-group">

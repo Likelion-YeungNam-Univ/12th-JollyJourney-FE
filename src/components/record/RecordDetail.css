@@ -1,3 +1,4 @@
+/* src/components/record/RecordDetail.css */
 .record-detail-container {
   padding: 20px;
   max-width: 800px;
@@ -22,6 +23,10 @@
   margin-left: 10px; /* 뒤로가기 버튼과 날짜 사이의 간격 조절 */
   font-size: 1.5rem;
   font-weight: bold;
+  background-color: white; /* 배경색 */
+  padding: 5px 10px; /* 내부 여백 조절 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  border: 2px solid #D1D1D1; /* 테두리 색상 */
 }
 
 .record-form {

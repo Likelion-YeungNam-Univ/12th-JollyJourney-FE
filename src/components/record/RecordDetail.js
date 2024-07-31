@@ -77,8 +77,8 @@ const RecordDetail = () => {
     <h2 className="record-date">{date}</h2>
     <span className="form-buttons">
           <button className="edit-button" onClick={handleEdit}>수정</button>
-          <button className="save-button" onClick={handleSave}>저장</button>
           <button className="delete-button" onClick={handleDelete}>삭제</button>
+          <button className="save-button" onClick={handleSave}>저장</button>
         </span>
       </span>
       <div className="record-form">

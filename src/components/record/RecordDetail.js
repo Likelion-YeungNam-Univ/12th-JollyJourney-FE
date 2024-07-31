@@ -1,3 +1,4 @@
+// src/components/record/RecordDetail.js
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './RecordDetail.css';
@@ -71,10 +72,10 @@ const RecordDetail = () => {
 
   return (
     <div className="record-detail-container">
-      <span className="record-header">
-        <img src={backButton} alt="뒤로가기" className="back-button" onClick={handleBack} />
-        <h2 className="record-date">{date}</h2>
-        <span className="form-buttons">
+    <span className="record-header">
+    <img src={backButton} alt="뒤로가기" className="back-button" onClick={handleBack} />
+    <h2 className="record-date">{date}</h2>
+    <span className="form-buttons">
           <button className="edit-button" onClick={handleEdit}>수정</button>
           <button className="save-button" onClick={handleSave}>저장</button>
           <button className="delete-button" onClick={handleDelete}>삭제</button>
@@ -155,8 +156,8 @@ const RecordDetail = () => {
           <textarea name="achievement" value={record.achievement} onChange={handleChange}></textarea>
         </div>
 
-        
-      </div>
+
+        </div>
     </div>
   );
 };

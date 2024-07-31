@@ -95,6 +95,7 @@
 .form-buttons {
   display: flex;
   justify-content: space-between;
+  margin-left: auto;
 }
 
 .save-button, .edit-button, .delete-button {
@@ -107,9 +108,11 @@
 .save-button {
   background-color: #86BD63;
   color: white;
+  margin: 5px;
 }
 
 .edit-button, .delete-button {
   background-color: #BDBDBD;
   color: white;
+  margin: 5px;
 }

@@ -19,7 +19,9 @@ const RecordDetail = () => {
     meditationMinutes: '',
     reflection: '',
     solution: '',
-    achievement: ''
+    achievement: '',
+    otherBodyCondition: '',
+    otherMood: ''
   });
 
   useEffect(() => {
@@ -72,10 +74,10 @@ const RecordDetail = () => {
 
   return (
     <div className="record-detail-container">
-    <span className="record-header">
-    <img src={backButton} alt="뒤로가기" className="back-button" onClick={handleBack} />
-    <h2 className="record-date">{date}</h2>
-    <span className="form-buttons">
+      <span className="record-header">
+        <img src={backButton} alt="뒤로가기" className="back-button" onClick={handleBack} />
+        <h2 className="record-date">{date}</h2>
+        <span className="form-buttons">
           <button className="edit-button" onClick={handleEdit}>수정</button>
           <button className="delete-button" onClick={handleDelete}>삭제</button>
           <button className="save-button" onClick={handleSave}>저장</button>
@@ -85,7 +87,7 @@ const RecordDetail = () => {
         <div className="form-group">
           <label>몸상태</label>
           <div className="button-group">
-            {['두통', '복통', '변비', '식욕부진', '오한', '허리통증', '소화불량', '근육통', '피부트러블', '기타'].map(condition => (
+            {['두통', '복통', '변비', '식욕부진', '오한', '허리통증', '소화불량', '근육통', '피부트러블'].map(condition => (
               <button
                 key={condition}
                 className={`condition-button ${record.bodyCondition.includes(condition) ? 'selected' : ''}`}
@@ -94,13 +96,20 @@ const RecordDetail = () => {
                 {condition}
               </button>
             ))}
+            <textarea
+              className="other-input"
+              name="otherBodyCondition"
+              placeholder="기타"
+              value={record.otherBodyCondition}
+              onChange={handleChange}
+            />
           </div>
         </div>
 
         <div className="form-group">
           <label>기분상태</label>
           <div className="button-group">
-            {['행복', '불안', '예민', '우울', '걱정', '무기력감', '기타'].map(mood => (
+            {['행복', '불안', '예민', '우울', '걱정', '무기력감'].map(mood => (
               <button
                 key={mood}
                 className={`condition-button ${record.mood.includes(mood) ? 'selected' : ''}`}
@@ -109,6 +118,13 @@ const RecordDetail = () => {
                 {mood}
               </button>
             ))}
+            <textarea
+              className="other-input"
+              name="otherMood"
+              placeholder="기타"
+              value={record.otherMood}
+              onChange={handleChange}
+            />
           </div>
         </div>
 
@@ -155,9 +171,7 @@ const RecordDetail = () => {
           <label>나의 성취</label>
           <textarea name="achievement" value={record.achievement} onChange={handleChange}></textarea>
         </div>
-
-
-        </div>
+      </div>
     </div>
   );
 };

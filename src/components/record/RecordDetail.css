@@ -39,6 +39,7 @@
 .form-group {
   margin-bottom: 20px;
   text-align: left;
+  margin-right: 20px;
 }
 
 .button-group {
@@ -123,6 +124,3 @@
   margin: 5px;
 }
 
-.other-input {
-  margin-top: 10px;
-}

@@ -111,8 +111,15 @@
   margin: 5px;
 }
 
-.edit-button, .delete-button {
+.edit-button {
   background-color: #BDBDBD;
   color: white;
   margin: 5px;
 }
+
+.delete-button {
+  background-color: #E51B1B;
+  color: white;
+  margin: 5px;
+}
+

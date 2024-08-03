@@ -1,0 +1,136 @@
+/* HeaderBeforeLogin.css */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8bc34a; /* 로고 색상 */
+  }
+  
+  .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-button {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-family: inherit;
+  }
+  
+  .nav-button:hover {
+    color: #8bc34a; /* 버튼 호버 색상 */
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px 0 0 20px;
+    font-size: 16px;
+    width: 300px; /* 검색 입력 필드 너비 */
+  }
+  
+  .search-button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-radius: 0 20px 20px 0;
+    background-color: #8bc34a;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background-color: #7cb342;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .login-button {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: inherit;
+  }
+  
+  .login-button:hover {
+    background-color: #f8f8f8;
+  }
+  
+  .signup-button {
+    background-color: #8bc34a;
+    border: 1px solid #8bc34a;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: inherit;
+  }
+  
+  .signup-button:hover {
+    background-color: #7cb342;
+  }
+  
+  /* 반응형 디자인 */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav ul {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+  
+    .search-container {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .auth-buttons {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+  
+    .auth-buttons button {
+      margin-left: 0;
+      margin-right: 10px;
+    }
+  }
+  

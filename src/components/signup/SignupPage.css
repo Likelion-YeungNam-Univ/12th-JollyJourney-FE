@@ -1,0 +1,116 @@
+.signup-container {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.signup-form {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.signup-form label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.signup-form input,
+.signup-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.email-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.email-group input[type="text"] {
+  flex: 2;
+}
+
+.email-group span {
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.email-group select {
+  flex: 1;
+}
+
+.signup-form .gender-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.gender-group input[type="radio"] {
+  margin-right: 5px;
+}
+
+.gender-group label {
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.checkbox-group label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 15px;
+  background-color: #8bc34a;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.signup-button:hover {
+  background-color: #7cb342;
+}
+
+.signup-form h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,145 @@
+/* HeaderAfterLogin.css */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8bc34a;
+  }
+  
+  .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-button {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-family: inherit;
+  }
+  
+  .nav-button:hover {
+    color: #8bc34a;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px 0 0 20px;
+    font-size: 16px;
+    width: 300px;
+  }
+  
+  .search-button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-radius: 0 20px 20px 0;
+    background-color: #8bc34a;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background-color: #7cb342;
+  }
+  
+  .user-menu {
+    position: relative;
+  }
+  
+  .user-name-button {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-family: inherit;
+  }
+  
+  .user-name-button:hover {
+    color: #8bc34a;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1001;
+    margin-top: 5px;
+  }
+  
+  .dropdown-item {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav ul {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+  
+    .search-container {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .user-menu {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+  
+    .user-name-button {
+      margin-left: 0;
+      margin-right: 10px;
+    }
+  }
+  

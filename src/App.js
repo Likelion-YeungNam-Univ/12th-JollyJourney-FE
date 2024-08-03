@@ -14,8 +14,8 @@ import RecordDetail from './components/record/RecordDetail';
 import Footer from './components/common/Footer';
 
 // SignIn 컴포넌트 import
-import SignIn from './components/signin/SignIn'; 
-import './components/signin/SignIn.css'; 
+import SignIn from './components/Signin/SignIn'; 
+import './components/Signin/SignIn.css'; 
 
 // SignupPage 컴포넌트 import
 import SignupPage from './components/signup/SignupPage'; 

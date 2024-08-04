@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // 경로를 실제 파일 위치에 맞게 수정
@@ -10,6 +10,7 @@ import SignIn from './components/signin/SignIn';
 import './components/signin/SignIn.css'; 
 
 import HeaderBeforeLogin from './components/main/HeaderBeforeLogin';
+import HeaderAfterLogin from './components/main/HeaderAfterLogin'; // AfterLogin 헤더 추가
 import Footer from './components/common/Footer';
 import Board from './components/board/Board';
 import CreatePost from './components/board/CreatePost';
@@ -21,9 +22,12 @@ import SignupPage from './components/signup/SignupPage';
 import './components/signup/SignupPage.css';
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // 초기 로그인 상태를 false로 설정
+
   return (
     <Router>
-      <HeaderBeforeLogin /> {/* 로그인 전 헤더 */}
+      {/* 로그인 상태에 따라 다른 헤더를 렌더링 */}
+      {isLoggedIn ? <HeaderAfterLogin /> : <HeaderBeforeLogin />}
       
       <Routes>
         <Route path="/info" element={<Board />} />
@@ -40,8 +44,14 @@ const App = () => {
       <MainContent /> {/* 메인 콘텐츠 및 이미지 컴포넌트 추가 */}
       
       <Footer />
+
+      {/* 로그인 상태를 변경할 수 있는 버튼 (예시) */}
+      <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
+        {isLoggedIn ? '로그아웃' : '로그인'}
+      </button>
     </Router>
   );
 };
 
 export default App;
+

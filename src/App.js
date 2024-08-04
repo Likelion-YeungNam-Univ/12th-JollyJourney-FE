@@ -1,23 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-// 다른 컴포넌트들 import
+// 경로를 실제 파일 위치에 맞게 수정
+import MainContent from './components/main/MainContent'; 
+import './components/main/MainContent.css'; 
+
+// SignIn 컴포넌트 import
+import SignIn from './components/signin/SignIn'; 
+import './components/signin/SignIn.css'; 
+
 import HeaderBeforeLogin from './components/main/HeaderBeforeLogin';
-import ImageComponent from './components/main/ImageComponent';
-import MainContent from './components/main/MainContent';
+import Footer from './components/common/Footer';
 import Board from './components/board/Board';
 import CreatePost from './components/board/CreatePost';
 import PostDetail from './components/board/PostDetail';
 import SearchResults from './components/search/SearchResults';
 import RecordPage from './components/record/RecordPage';
 import RecordDetail from './components/record/RecordDetail';
-import Footer from './components/common/Footer';
-
-// SignIn 컴포넌트 import
-import SignIn from './components/Signin/SignIn'; 
-import './components/Signin/SignIn.css'; 
-
-// SignupPage 컴포넌트 import
 import SignupPage from './components/signup/SignupPage'; 
 import './components/signup/SignupPage.css';
 
@@ -38,8 +37,7 @@ const App = () => {
         <Route path="/signup" element={<SignupPage />} /> {/* SignupPage 컴포넌트 라우팅 */}
       </Routes>
 
-      <MainContent /> {/* 메인 콘텐츠 추가 */}
-      <ImageComponent /> {/* 이미지 컴포넌트 추가 */}
+      <MainContent /> {/* 메인 콘텐츠 및 이미지 컴포넌트 추가 */}
       
       <Footer />
     </Router>

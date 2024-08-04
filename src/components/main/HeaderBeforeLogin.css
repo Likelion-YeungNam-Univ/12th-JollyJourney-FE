@@ -87,7 +87,22 @@
     list-style: none; /* 마커 제거 */
 }
   
-  .login-button {
+.login-button {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 15px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+  
+  .login-button:hover {
+    background-color: #f8f8f8;
+  }
+  
+  .signup-button {
     background: none;
     border: 1px solid #ddd;
     padding: 5px 10px;
@@ -95,26 +110,14 @@
     cursor: pointer;
     font-size: 16px;
     font-family: inherit;
-  }
-  
-  .login-button:hover {
-    background-color: #f8f8f8;
-  }
-  
-  .signup-button {
-    background-color: #8bc34a;
-    border: 1px solid #8bc34a;
-    padding: 5px 10px;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    font-family: inherit;
-  }
-  
-  .signup-button:hover {
-    background-color: #7cb342;
-  }
+    color: #333; /* 로그인 버튼과 동일한 텍스트 색상 */
+}
+
+.signup-button:hover {
+    background-color: #f8f8f8; /* 로그인 버튼과 동일한 호버 효과 */
+}
+
+
   
   /* 반응형 디자인 */
   @media (max-width: 768px) {

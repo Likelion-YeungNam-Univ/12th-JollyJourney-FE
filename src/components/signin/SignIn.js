@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from '../common/Navbar';
+
 
 import './SignIn.css';
 
@@ -20,7 +20,7 @@ const SignIn = () => {
 
   return (
     <>
-      <Header />
+      
       <div className="signin-container">
         <h2 className="welcome-message">Jolly Journey 에 오신 걸 환영해요!</h2>
         <form className="signin-form" onSubmit={handleSubmit}>

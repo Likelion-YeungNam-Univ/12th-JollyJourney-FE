@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './SignupPage.css';  
-import Navbar from '../common/Navbar'; // Header 대신 Navbar를 불러오도록 경로 수정
+
 
 const SignupPage = () => {
   const [errors, setErrors] = useState({});
@@ -64,7 +64,7 @@ const SignupPage = () => {
 
   return (
     <div>
-      <Navbar /> {/* Header 대신 Navbar를 사용 */}
+      
       <div className="signup-container">
         <form className="signup-form" onSubmit={validate}>
           <h2>회원가입</h2>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './MainContent.css';
 
-// MainContent에서 ImageComponent를 사용하지 않음으로써 중복을 피함
+// 올바른 경로로 이미지 파일을 import
+import imageFile from '../../assets/images/스크린샷 2024-07-31 오후 10.16.48.png'; // 경로를 맞게 수정하세요.
 import image1 from '../../assets/images/IMG_8642 2.PNG';
 
 const images = [
@@ -10,6 +11,14 @@ const images = [
   image1,
   image1,
 ];
+
+const ImageComponent = () => {
+  return (
+    <div className="image-container">
+      <img src={imageFile} alt="Jolly Journey" />
+    </div>
+  );
+};
 
 function MainContent() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,6 +40,7 @@ function MainContent() {
           <button className="next" onClick={nextSlide}>{">"}</button>
         </div>
       </main>
+      <ImageComponent /> {/* ImageComponent가 MainContent 아래에 위치합니다. */}
     </div>
   );
 }

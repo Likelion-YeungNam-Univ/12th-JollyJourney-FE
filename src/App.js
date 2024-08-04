@@ -22,7 +22,7 @@ import SignupPage from './components/signup/SignupPage';
 import './components/signup/SignupPage.css';
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // 초기 로그인 상태를 false로 설정
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // 초기 로그인 상태를 false로 설정
 
   return (
     <Router>

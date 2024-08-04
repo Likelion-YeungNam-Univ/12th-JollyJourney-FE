@@ -78,7 +78,14 @@
   .auth-buttons {
     display: flex;
     gap: 10px;
-  }
+    list-style: none; /* 마커 제거 */
+    padding: 0; /* 마커 제거 */
+    margin: 0; /* 마커 제거 */
+}
+
+.auth-buttons li { /* 추가된 부분 */
+    list-style: none; /* 마커 제거 */
+}
   
   .login-button {
     background: none;

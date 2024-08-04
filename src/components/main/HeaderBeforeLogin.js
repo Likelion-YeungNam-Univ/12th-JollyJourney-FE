@@ -6,7 +6,9 @@ import logo from '../../assets/images/image.png';
 const HeaderBeforeLogin = () => {
   return (
     <header className="header">
-      <div className="logo">JOLLY JOURNEY</div>
+      <Link to="/">
+          <img src={logo} alt="Logo" className="navbar-logo" />
+        </Link>
       <nav className="nav">
       <ul className="navbar-menu">
           <li><Link to="/info">육아 스트레스 정보</Link></li>
@@ -18,8 +20,16 @@ const HeaderBeforeLogin = () => {
         <button className="search-button"><span role="img" aria-label="search">🔍</span></button>
       </div>
       <div className="auth-buttons">
-        <button className="login-button">로그인</button>
+        <li>
+          <Link to="/signin">
+          <button className="login-button">로그인</button>
+          </Link>
+          </li>
+        <li>  
+          <Link to="/signup">
         <button className="signup-button">회원가입</button>
+          </Link>
+          </li>
       </div>
     </header>
   );

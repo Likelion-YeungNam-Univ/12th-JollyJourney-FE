@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './HeaderAfterLogin.css';
+import { Link, useNavigate } from 'react-router-dom';
+import logo from '../../assets/images/image.png';
 
 const HeaderAfterLogin = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -10,11 +12,13 @@ const HeaderAfterLogin = () => {
 
   return (
     <header className="header">
-      <div className="logo">JOLLY JOURNEY</div>
+      <Link to="/">
+          <img src={logo} alt="Logo" className="navbar-logo" />
+        </Link>
       <nav className="nav">
-        <ul>
-          <li><button className="nav-button">육아 스트레스 정보</button></li>
-          <li><button className="nav-button">나의 기록</button></li>
+      <ul className="navbar-menu">
+          <li><Link to="/info">육아 스트레스 정보</Link></li>
+          <li><Link to="/record">나의 기록</Link></li>
         </ul>
       </nav>
       <div className="search-container">

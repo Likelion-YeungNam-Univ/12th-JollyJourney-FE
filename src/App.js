@@ -6,8 +6,8 @@ import MainContent from './components/main/MainContent';
 import './components/main/MainContent.css'; 
 
 // SignIn 컴포넌트 import
-import SignIn from './components/signin/SignIn'; 
-import './components/signin/SignIn.css'; 
+import SignIn from './components/Signin/SignIn'; 
+import './components/Signin/SignIn.css'; 
 
 import HeaderBeforeLogin from './components/main/HeaderBeforeLogin';
 import HeaderAfterLogin from './components/main/HeaderAfterLogin'; // AfterLogin 헤더 추가
@@ -30,6 +30,7 @@ const App = () => {
       {isLoggedIn ? <HeaderAfterLogin /> : <HeaderBeforeLogin />}
       
       <Routes>
+        <Route path="/" element={<MainContent /> } />
         <Route path="/info" element={<Board />} />
         <Route path="/posts" element={<Board />} />
         <Route path="/posts/:id" element={<PostDetail />} />
@@ -41,8 +42,6 @@ const App = () => {
         <Route path="/signup" element={<SignupPage />} /> {/* SignupPage 컴포넌트 라우팅 */}
       </Routes>
 
-      <MainContent /> {/* 메인 콘텐츠 및 이미지 컴포넌트 추가 */}
-      
       <Footer />
 
       {/* 로그인 상태를 변경할 수 있는 버튼 (예시) */}

@@ -18,7 +18,10 @@ const Board = () => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get('http://13.125.25.162:8080/journals');
-        const data = response.data;
+        const data = response.data.map(post => ({
+          ...post,
+          imageUrl: 'https://jollyjourney-s3-bucket.s3.ap-northeast-2.amazonaws.com/1722786183492_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2024-07-13+%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE+2.03.26.png' // 이미지 URL 추가
+        }));
         setPosts(data);
         setFilteredPosts(data);
       } catch (error) {

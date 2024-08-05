@@ -3,37 +3,21 @@ import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight-words';
 import './Board.css';
 import Pagination from '../common/Pagination';
+import { posts as mockPosts } from '../../mockData';
 import searchIcon from '../../assets/images/search-icon.png';
-import axios from 'axios';
 
 const Board = () => {
-  const [posts, setPosts] = useState([]);
-  const [filteredPosts, setFilteredPosts] = useState([]);
+  const [posts, setPosts] = useState(mockPosts);
+  const [filteredPosts, setFilteredPosts] = useState(mockPosts);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
   const [searchKeyword, setSearchKeyword] = useState('');
 
   useEffect(() => {
-    // API 호출
-    const fetchPosts = async () => {
-      try {
-        const response = await axios.get('http://13.125.25.162:8080/journals');
-        const data = response.data;
-        setPosts(data);
-        setFilteredPosts(data);
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-      }
-    };
-
-    fetchPosts();
-  }, []);
-
-  useEffect(() => {
     const keyword = searchKeyword.toLowerCase();
     const filtered = posts.filter(post => 
       post.title.toLowerCase().includes(keyword) || 
-      (post.summary && post.summary.toLowerCase().includes(keyword)) || 
+      post.summary.toLowerCase().includes(keyword) || 
       post.content.toLowerCase().includes(keyword)
     );
     setFilteredPosts(filtered);
@@ -44,7 +28,7 @@ const Board = () => {
     const keyword = searchKeyword.toLowerCase();
     const filtered = posts.filter(post => 
       post.title.toLowerCase().includes(keyword) || 
-      (post.summary && post.summary.toLowerCase().includes(keyword)) || 
+      post.summary.toLowerCase().includes(keyword) || 
       post.content.toLowerCase().includes(keyword)
     );
     setFilteredPosts(filtered);
@@ -79,13 +63,13 @@ const Board = () => {
       </div>
       <div className="post-list">
         {currentPosts.map(post => (
-          <div key={post.journalId} className="post-item">
-            <Link to={`/posts/${post.journalId}`}>
-              <img src={post.imageUrl || '/default-image.png'} alt="Post" className="post-image" />
+          <div key={post.id} className="post-item">
+            <Link to={`/posts/${post.id}`}>
+              <img src={post.image} alt="Post" className="post-image" />
             </Link>
             <div className="post-content">
               <h2>
-                <Link to={`/posts/${post.journalId}`} className="post-link">
+                <Link to={`/posts/${post.id}`} className="post-link">
                   <Highlight
                     searchWords={[searchKeyword]}
                     textToHighlight={post.title}
@@ -94,16 +78,16 @@ const Board = () => {
                 </Link>
               </h2>
               <p>
-                <Link to={`/posts/${post.journalId}`} className="post-link">
+                <Link to={`/posts/${post.id}`} className="post-link">
                   <Highlight
                     searchWords={[searchKeyword]}
-                    textToHighlight={post.content}
+                    textToHighlight={post.summary}
                     highlightStyle={{ backgroundColor: 'transparent', color: '#86BD63' }}
                   />
                 </Link>
               </p>
               <p className="post-date">
-                {new Date(post.createDate).toLocaleDateString()} <span className="post-author">by. {post.author || 'Anonymous'}</span>
+                {post.date} <span className="post-author">by. {post.author}</span>
               </p>
             </div>
           </div>

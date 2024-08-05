@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './SignupPage.css';
-import axios from 'axios';
+import './SignupPage.css';  
+
 
 const SignupPage = () => {
   const [errors, setErrors] = useState({});
   
-  const validate = async (event) => {
+  const validate = (event) => {
     event.preventDefault();
     const email = event.target.email.value + '@' + event.target.domain.value;
     const password = event.target.password.value;
@@ -14,7 +14,6 @@ const SignupPage = () => {
     const phone = event.target.phone.value;
     const birthdate = event.target.birthdate.value;
     const terms = event.target.terms.checked;
-    const gender = event.target.gender.value === 'male' ? 'MALE' : 'FEMALE';
     let newErrors = {};
 
     // 이메일 유효성 검사
@@ -58,34 +57,14 @@ const SignupPage = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      // 서버로 회원가입 요청
-      try {
-        const response = await axios.post('http://13.125.25.162:8080/auth/signup', {
-          email,
-          password,
-          passwordConfirm: confirmPassword,
-          name: username,
-          phoneNumber: phone,
-          birthDay: birthdate,
-          gender
-        });
-        
-        if (response.status === 200) {
-          console.log('회원가입 성공');
-        }
-      } catch (error) {
-        console.error('회원가입 실패', error);
-        // 서버에서 반환된 에러 메시지를 표시합니다.
-        if (error.response && error.response.data) {
-          const serverErrors = error.response.data;
-          setErrors(serverErrors);
-        }
-      }
+      // 성공적으로 가입
+      console.log('회원가입 성공');
     }
   };
 
   return (
     <div>
+      
       <div className="signup-container">
         <form className="signup-form" onSubmit={validate}>
           <h2>회원가입</h2>

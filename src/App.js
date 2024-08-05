@@ -6,8 +6,8 @@ import MainContent from './components/main/MainContent';
 import './components/main/MainContent.css'; 
 
 // SignIn 컴포넌트 import
-import SignIn from './components/signin/SignIn'; 
-import './components/signin/SignIn.css'; 
+import SignIn from './components/Signin/SignIn'; 
+import './components/Signin/SignIn.css'; 
 
 import EditPost from './components/board/EditPost';
 

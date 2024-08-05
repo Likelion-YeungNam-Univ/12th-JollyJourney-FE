@@ -9,6 +9,8 @@ import './components/main/MainContent.css';
 import SignIn from './components/signin/SignIn'; 
 import './components/signin/SignIn.css'; 
 
+import EditPost from './components/board/EditPost';
+
 import HeaderBeforeLogin from './components/main/HeaderBeforeLogin';
 import HeaderAfterLogin from './components/main/HeaderAfterLogin'; // AfterLogin 헤더 추가
 import Footer from './components/common/Footer';
@@ -40,6 +42,8 @@ const App = () => {
         <Route path="/record/:date" element={<RecordDetail />} />
         <Route path="/signin" element={<SignIn />} /> {/* SignIn 컴포넌트 라우팅 */}
         <Route path="/signup" element={<SignupPage />} /> {/* SignupPage 컴포넌트 라우팅 */}
+        <Route path="/edit-post/:id" component={<EditPost />} />
+
       </Routes>
 
       <Footer />

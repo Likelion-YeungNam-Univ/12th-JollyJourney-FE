@@ -6,7 +6,21 @@ import rightArrow from '../../assets/images/right-arrow.png';
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const pages = [];
-  for (let i = 1; i <= totalPages; i++) {
+  const maxPages = 3;
+  const halfMaxPages = Math.floor(maxPages / 2);
+
+  let startPage = Math.max(1, currentPage - halfMaxPages);
+  let endPage = Math.min(totalPages, currentPage + halfMaxPages);
+
+  if (currentPage <= halfMaxPages) {
+    endPage = Math.min(totalPages, maxPages);
+  }
+
+  if (currentPage + halfMaxPages >= totalPages) {
+    startPage = Math.max(1, totalPages - maxPages + 1);
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
     pages.push(i);
   }
 

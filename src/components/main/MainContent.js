@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './MainContent.css';
 
 // 올바른 경로로 이미지 파일을 import
-import imageFile from '../../assets/images/스크린샷 2024-07-31 오후 10.16.48.png'; // 경로를 맞게 수정하세요.
+import imageFile from '../../assets/images/스크린샷 2024-07-31 오후 10.16.48.png'; // 경로를 맞게 수정하세요.
 import image1 from '../../assets/images/KakaoTalk_Photo_2024-08-04-23-53-25.png';
 
 const images = [

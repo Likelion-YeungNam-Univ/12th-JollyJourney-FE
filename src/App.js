@@ -38,8 +38,8 @@ const App = () => {
         <Route path="/posts/:id" element={<PostDetail />} />
         <Route path="/posts/create" element={<CreatePost />} />
         <Route path="/search" element={<SearchResults />} />
-        <Route path="/record" element={<RecordPage />} />
-        <Route path="/record/:date" element={<RecordDetail />} />
+        <Route path="/diary" element={<RecordPage />} />
+        <Route path="/diary/:userDId" element={<RecordDetail />} />
         <Route path="/signin" element={<SignIn />} /> {/* SignIn 컴포넌트 라우팅 */}
         <Route path="/signup" element={<SignupPage />} /> {/* SignupPage 컴포넌트 라우팅 */}
         <Route path="/edit-post/:id" component={<EditPost />} />

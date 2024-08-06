@@ -5,14 +5,12 @@ import './Board.css';
 import Pagination from '../common/Pagination';
 import searchIcon from '../../assets/images/search-icon.png';
 import axios from 'axios';
-
 const Board = () => {
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
   const [searchKeyword, setSearchKeyword] = useState('');
-
   useEffect(() => {
     // API 호출
     const fetchPosts = async () => {
@@ -25,10 +23,8 @@ const Board = () => {
         console.error('Error fetching posts:', error);
       }
     };
-
     fetchPosts();
   }, []);
-
   useEffect(() => {
     const keyword = searchKeyword.toLowerCase();
     const filtered = posts.filter(post => 
@@ -39,7 +35,6 @@ const Board = () => {
     setFilteredPosts(filtered);
     setCurrentPage(1); // 검색 후 첫 페이지로 이동
   }, [searchKeyword, posts]);
-
   const handleSearch = () => {
     const keyword = searchKeyword.toLowerCase();
     const filtered = posts.filter(post => 
@@ -50,16 +45,13 @@ const Board = () => {
     setFilteredPosts(filtered);
     setCurrentPage(1); // 검색 후 첫 페이지로 이동
   };
-
   // Calculate the displayed posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
-
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
-
   return (
     <div className="board-container">
       <div className="board-header">
@@ -117,5 +109,4 @@ const Board = () => {
     </div>
   );
 };
-
 export default Board;

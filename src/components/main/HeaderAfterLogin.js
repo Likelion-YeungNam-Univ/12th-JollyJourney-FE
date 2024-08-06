@@ -27,7 +27,7 @@ const HeaderAfterLogin = () => {
       <nav className="nav">
         <ul>
         <li><Link to="/info"><button className="nav-button">육아 스트레스 정보</button></Link></li>
-          <li><Link to="/record"><button className="nav-button">나의 기록</button></Link></li>
+          <li><Link to="/diary"><button className="nav-button">나의 기록</button></Link></li>
         </ul>
       </nav>
       <form className="navbar-search" onSubmit={handleSearch}>

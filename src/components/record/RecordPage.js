@@ -27,7 +27,7 @@ const RecordPage = () => {
       String(date.getDate()).padStart(2, '0')
     ];
     const formattedDate = `${yyyy}-${mm}-${dd}`;
-    navigate(`/record/${formattedDate}`);
+    navigate(`/diary/${formattedDate}`);
   };
 
   const tileClassName = ({ date, view }) => {

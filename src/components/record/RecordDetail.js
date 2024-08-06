@@ -23,7 +23,7 @@ const RecordDetail = () => {
     // API를 통해 특정 일기 조회
     const fetchRecordDetail = async () => {
       try {
-        const response = await axios.get(`http://13.125.25.162:8080/diary/${userDId}`);
+        const response = await axios.get(`http://13.125.25.162:8080/diary/2`);
         setRecord(response.data);
         setLoading(false);
       } catch (error) {
@@ -51,7 +51,7 @@ const RecordDetail = () => {
     // 로컬 스토리지에서 기록 삭제
     localStorage.removeItem(userDId);
     alert('기록이 삭제되었습니다.');
-    navigate('/record');
+    navigate('/diary');
   };
 
   const handleEdit = () => {
@@ -60,7 +60,7 @@ const RecordDetail = () => {
   };
 
   const handleBack = () => {
-    navigate('/record');
+    navigate('/diary');
   };
 
   if (loading) {

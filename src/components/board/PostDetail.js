@@ -92,7 +92,7 @@ const PostDetail = () => {
         <div className="post-meta">
           <span className="post-date">{new Date(post.createDate).toLocaleDateString()}</span>
           <div className="post-stats">
-            <span>조회수 {post.viewCount}</span>
+            <span>조회수 {post.Count}</span>
             <span>댓글 {post.commentCount}</span>
           </div>
         </div>
